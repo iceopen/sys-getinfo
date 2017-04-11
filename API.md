@@ -196,7 +196,7 @@
 
 ##  根目录磁盘使用情况
 ### 地址： 
-> ip:port/cpu/info
+> ip:port/disk/usage
 
 ### 返回参数：
 ```javascript
