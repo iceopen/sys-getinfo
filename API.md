@@ -229,12 +229,240 @@ GET
 }
 ```
 
+##  磁盘列表
+mountpoint 参数为 根据传参目录磁盘使用情况 使用目录
+### 地址： 
+> ip:port/disk/list
+
+### 请求方法：
+GET
+
+### 返回参数：
+linux 返回案例：
+```javascript
+[
+  {
+    "device": "sysfs",
+    "mountpoint": "/sys",
+    "fstype": "sysfs",
+    "opts": "rw,nosuid,nodev,noexec,relatime"
+  },
+  {
+    "device": "proc",
+    "mountpoint": "/proc",
+    "fstype": "proc",
+    "opts": "rw,nosuid,nodev,noexec,relatime"
+  },
+  {
+    "device": "udev",
+    "mountpoint": "/dev",
+    "fstype": "devtmpfs",
+    "opts": "rw,nosuid,relatime,size=4066816k,nr_inodes=1016704,mode=755"
+  },
+  {
+    "device": "devpts",
+    "mountpoint": "/dev/pts",
+    "fstype": "devpts",
+    "opts": "rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000"
+  },
+  {
+    "device": "tmpfs",
+    "mountpoint": "/run",
+    "fstype": "tmpfs",
+    "opts": "rw,nosuid,noexec,relatime,size=817136k,mode=755"
+  },
+  {
+    "device": "/dev/mapper/ubuntu--134--vg-root",
+    "mountpoint": "/",
+    "fstype": "ext4",
+    "opts": "rw,relatime,errors=remount-ro,data=ordered"
+  },
+  {
+    "device": "securityfs",
+    "mountpoint": "/sys/kernel/security",
+    "fstype": "securityfs",
+    "opts": "rw,nosuid,nodev,noexec,relatime"
+  },
+  {
+    "device": "tmpfs",
+    "mountpoint": "/dev/shm",
+    "fstype": "tmpfs",
+    "opts": "rw,nosuid,nodev"
+  },
+  {
+    "device": "tmpfs",
+    "mountpoint": "/run/lock",
+    "fstype": "tmpfs",
+    "opts": "rw,nosuid,nodev,noexec,relatime,size=5120k"
+  },
+  {
+    "device": "tmpfs",
+    "mountpoint": "/sys/fs/cgroup",
+    "fstype": "tmpfs",
+    "opts": "rw,mode=755"
+  },
+  {
+    "device": "cgroup",
+    "mountpoint": "/sys/fs/cgroup/systemd",
+    "fstype": "cgroup",
+    "opts": "rw,nosuid,nodev,noexec,relatime,xattr,release_agent=/lib/systemd/systemd-cgroups-agent,name=systemd"
+  },
+  {
+    "device": "pstore",
+    "mountpoint": "/sys/fs/pstore",
+    "fstype": "pstore",
+    "opts": "rw,nosuid,nodev,noexec,relatime"
+  },
+  {
+    "device": "cgroup",
+    "mountpoint": "/sys/fs/cgroup/perf_event",
+    "fstype": "cgroup",
+    "opts": "rw,nosuid,nodev,noexec,relatime,perf_event,release_agent=/run/cgmanager/agents/cgm-release-agent.perf_event"
+  },
+  {
+    "device": "cgroup",
+    "mountpoint": "/sys/fs/cgroup/cpuset",
+    "fstype": "cgroup",
+    "opts": "rw,nosuid,nodev,noexec,relatime,cpuset,clone_children"
+  },
+  {
+    "device": "cgroup",
+    "mountpoint": "/sys/fs/cgroup/blkio",
+    "fstype": "cgroup",
+    "opts": "rw,nosuid,nodev,noexec,relatime,blkio"
+  },
+  {
+    "device": "cgroup",
+    "mountpoint": "/sys/fs/cgroup/pids",
+    "fstype": "cgroup",
+    "opts": "rw,nosuid,nodev,noexec,relatime,pids,release_agent=/run/cgmanager/agents/cgm-release-agent.pids"
+  },
+  {
+    "device": "cgroup",
+    "mountpoint": "/sys/fs/cgroup/cpu,cpuacct",
+    "fstype": "cgroup",
+    "opts": "rw,nosuid,nodev,noexec,relatime,cpu,cpuacct"
+  },
+  {
+    "device": "cgroup",
+    "mountpoint": "/sys/fs/cgroup/hugetlb",
+    "fstype": "cgroup",
+    "opts": "rw,nosuid,nodev,noexec,relatime,hugetlb,release_agent=/run/cgmanager/agents/cgm-release-agent.hugetlb"
+  },
+  {
+    "device": "cgroup",
+    "mountpoint": "/sys/fs/cgroup/memory",
+    "fstype": "cgroup",
+    "opts": "rw,nosuid,nodev,noexec,relatime,memory"
+  },
+  {
+    "device": "cgroup",
+    "mountpoint": "/sys/fs/cgroup/freezer",
+    "fstype": "cgroup",
+    "opts": "rw,nosuid,nodev,noexec,relatime,freezer"
+  },
+  {
+    "device": "cgroup",
+    "mountpoint": "/sys/fs/cgroup/net_cls,net_prio",
+    "fstype": "cgroup",
+    "opts": "rw,nosuid,nodev,noexec,relatime,net_cls,net_prio"
+  },
+  {
+    "device": "cgroup",
+    "mountpoint": "/sys/fs/cgroup/devices",
+    "fstype": "cgroup",
+    "opts": "rw,nosuid,nodev,noexec,relatime,devices"
+  },
+  {
+    "device": "systemd-1",
+    "mountpoint": "/proc/sys/fs/binfmt_misc",
+    "fstype": "autofs",
+    "opts": "rw,relatime,fd=24,pgrp=1,timeout=0,minproto=5,maxproto=5,direct"
+  },
+  {
+    "device": "debugfs",
+    "mountpoint": "/sys/kernel/debug",
+    "fstype": "debugfs",
+    "opts": "rw,relatime"
+  },
+  {
+    "device": "mqueue",
+    "mountpoint": "/dev/mqueue",
+    "fstype": "mqueue",
+    "opts": "rw,relatime"
+  },
+  {
+    "device": "hugetlbfs",
+    "mountpoint": "/dev/hugepages",
+    "fstype": "hugetlbfs",
+    "opts": "rw,relatime"
+  },
+  {
+    "device": "sunrpc",
+    "mountpoint": "/run/rpc_pipefs",
+    "fstype": "rpc_pipefs",
+    "opts": "rw,relatime"
+  },
+  {
+    "device": "fusectl",
+    "mountpoint": "/sys/fs/fuse/connections",
+    "fstype": "fusectl",
+    "opts": "rw,relatime"
+  },
+  {
+    "device": "/dev/sda1",
+    "mountpoint": "/boot",
+    "fstype": "ext2",
+    "opts": "rw,relatime,block_validity,barrier,user_xattr,acl"
+  },
+  {
+    "device": "cgmfs",
+    "mountpoint": "/run/cgmanager/fs",
+    "fstype": "tmpfs",
+    "opts": "rw,relatime,size=100k,mode=755"
+  },
+  {
+    "device": "tmpfs",
+    "mountpoint": "/run/user/0",
+    "fstype": "tmpfs",
+    "opts": "rw,nosuid,nodev,relatime,size=817136k,mode=700"
+  },
+  {
+    "device": "172.16.136.143:/exports/10000sq",
+    "mountpoint": "/data/file",
+    "fstype": "nfs",
+    "opts": "rw,relatime,vers=3,rsize=32768,wsize=32768,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=172.16.136.143,mountvers=3,mountport=597,mountproto=udp,local_lock=none,addr=172.16.136.143"
+  }
+]
+```
+
+window 返回案例：
+```javascript
+[
+  {
+    "device": "C:",
+    "mountpoint": "C:",
+    "fstype": "NTFS",
+    "opts": "rw.compress"
+  },
+  {
+    "device": "E:",
+    "mountpoint": "E:",
+    "fstype": "NTFS",
+    "opts": "rw.compress"
+  }
+]
+```
+
 ##  根据传参目录磁盘使用情况
 ### 地址： 
 > ip:port/disk/path
 
 ### 请求方法：
 POST
+
+### 参数说明：
+path : 目录地址，参数案例 /data/file
 
 ### 返回参数：
 ```javascript
