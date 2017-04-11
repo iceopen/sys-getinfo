@@ -4,6 +4,9 @@
 ### 地址： 
 > ip:port/swap/info
 
+### 请求方法：
+GET
+
 ### 返回参数：
 ```javascript
 {
@@ -18,6 +21,9 @@
 ##  内存使用情况
 ### 地址： 
 > ip:port/vmem/info
+
+### 请求方法：
+GET
 
 ### 返回参数：
 ```javascript
@@ -44,6 +50,9 @@
 ##  CPU使用情况
 ### 地址： 
 > ip:port/cpu/time
+
+### 请求方法：
+GET
 
 ### 返回参数：
 ```javascript
@@ -96,6 +105,9 @@
 ##  CPU信息
 ### 地址： 
 > ip:port/cpu/info
+
+### 请求方法：
+GET
 
 ### 返回参数：
 ```javascript
@@ -198,6 +210,9 @@
 ### 地址： 
 > ip:port/disk/usage
 
+### 请求方法：
+GET
+
 ### 返回参数：
 ```javascript
 {
@@ -211,5 +226,28 @@
   "inodesUsed": 2316801,
   "inodesFree": 4292650478,
   "inodesUsedPercent": 0.053942227018302744
+}
+```
+
+##  根据传参目录磁盘使用情况
+### 地址： 
+> ip:port/disk/path
+
+### 请求方法：
+POST
+
+### 返回参数：
+```javascript
+{
+  "path": "/data/file",
+  "fstype": "nfs",
+  "total": 536870912000,
+  "free": 420079468544,
+  "used": 116791443456,
+  "usedPercent": 21.7541015625,
+  "inodesTotal": 827138037,
+  "inodesUsed": 969507,
+  "inodesFree": 826168530,
+  "inodesUsedPercent": 0.11721223745390395
 }
 ```

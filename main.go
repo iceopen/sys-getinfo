@@ -6,6 +6,7 @@ import (
 	"github.com/shirou/gopsutil/cpu"
 	"github.com/shirou/gopsutil/disk"
 	"github.com/martini-contrib/render"
+	"net/http"
 )
 
 func init() {
@@ -43,6 +44,12 @@ func main() {
 	//硬盘使用 信息详细
 	m.Get("/disk/usage", func(r render.Render){
 		diskInfo, _ := disk.Usage("/")
+		r.JSON(200, diskInfo)
+	})
+	//制定目录使用 信息详细
+	m.Post("/disk/path", func(r render.Render, req *http.Request){
+		path := req.FormValue("path")
+		diskInfo, _ := disk.Usage(path)
 		r.JSON(200, diskInfo)
 	})
 	//m.Run()
