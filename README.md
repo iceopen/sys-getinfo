@@ -41,3 +41,6 @@ solaris	amd64
 windows	386
 windows	amd64
 ```
+## 部署方案：
+- 1.防火墙开发TCP：8848 端口
+- 2.Supervisord 进行部署
